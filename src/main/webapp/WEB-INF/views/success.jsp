@@ -15,7 +15,9 @@
     Student FirstName: ${student.firstName}<br>
     Student LastName: ${student.lastName}<br>
     Student Email: ${student.email}<br>
-    Student Phone: ${student.phone.area}-${student.phone.prefix}-${student.phone.number}<br>
+    Student Gender: ${student.gender}<br>
+    Student BirthDay: ${student.birthday}<br>
+    Student Phone: (${student.phone.area})${student.phone.prefix}-${student.phone.number}<br>
 
 
 </p>

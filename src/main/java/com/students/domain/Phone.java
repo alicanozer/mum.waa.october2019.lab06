@@ -17,7 +17,9 @@ public class Phone implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Integer area;
+
     private Integer prefix;
+
     private Integer number;
 
 

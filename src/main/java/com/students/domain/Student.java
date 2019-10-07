@@ -1,21 +1,29 @@
 package com.students.domain;
 
-import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 
 public class Student {
 
     private Integer id;
-
-    private String firstName = null;
-
-    private String lastName = null;
-
-    private String email = null;
-
-    private String gender = null;
-
-    private Date birthday;
+    @Size(min = 4, max = 50, message = "size of name should be between 4 to 50")
+    private String firstName;
+    @Size(min = 4, max = 50, message = "size of name should be between 4 to 50")
+    private String lastName;
+    @NotBlank(message = "Email must be filled")
+    @Email(message = "Must be an email")
+    private String email;
+    @NotBlank(message = "Gender must be Selected")
+    private String gender;
+    @NotNull(message = "Birthday must be filled")
+    @DateTimeFormat(pattern = "MM-dd-yyyy")
+    private LocalDate birthday;
 
     private Phone phone;
 
@@ -59,11 +67,11 @@ public class Student {
         this.gender = gender;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 
@@ -74,6 +82,4 @@ public class Student {
     public void setPhone(Phone phone) {
         this.phone = phone;
     }
-
-
 }
